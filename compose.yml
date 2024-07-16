@@ -1,0 +1,11 @@
+services:
+  fibonacci-service:
+    build: .
+    ports:
+      - "8080:8080"
+
+  test:
+    build: .
+    command: ["python", "test_fibonacci.py"]
+    depends_on:
+      - fibonacci-service
