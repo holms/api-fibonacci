@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "fibonacci.fullname" . }}
+  labels:
+    app: {{ include "fibonacci.name" . }}
+    chart: {{ include "fibonacci.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: 8080
+  selector:
+    app: {{ include "fibonacci.name" . }}
+    release: {{ .Release.Name }}
