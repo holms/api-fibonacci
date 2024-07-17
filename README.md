@@ -1,5 +1,8 @@
 # Fibonacci Service
 
+![CI](https://github.com/holms/api-fibonacci/actions/workflows/docker-image.yml/badge.svg)
+
+
 This repository contains a simple web service that calculates the nth Fibonacci number. The service is implemented using Python and CherryPy, and it is containerized using Docker. This document provides instructions on how to build, test, deploy, and scale the service.
 
 ## Table of Contents
