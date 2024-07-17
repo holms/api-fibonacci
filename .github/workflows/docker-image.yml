@@ -19,7 +19,7 @@ jobs:
       - name: Common Steps
         uses: ./.github/actions/common-steps
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GHCR_TOKEN }}
 
       - name: Build Docker image
         id: build
@@ -40,7 +40,7 @@ jobs:
       - name: Common Steps
         uses: ./.github/actions/common-steps
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GHCR_TOKEN }}
 
       - name: Run tests with Makefile
         run: make test
@@ -57,7 +57,7 @@ jobs:
       - name: Common Steps
         uses: ./.github/actions/common-steps
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GHCR_TOKEN }}
 
       - name: Push Docker image
         uses: docker/build-push-action@v5
